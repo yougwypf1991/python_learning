@@ -1,0 +1,25 @@
+将服务器分为两个部分：HTTPserver.py和WebFrame.py
+HTTPserver.py功能：
+    1 接收HTTP请求（socket通信）
+	2 解析http请求
+		# 请求类型 GET，POST
+		# 请求内容 
+	3 将具体的请求整理后给web frame
+	4 接收后端应用返回数据内容
+	5 将数据组织为http response的格式发送给客户端
+WebFrame.py功能：
+    1 接收httpserver部分发送的请求
+	2 根据请求进行逻辑处理或数据整合
+	3 将处理结果回发给httpserver部分
+		# 可以处理，则将结果和数据都给httpserver
+		# 不可处理，将原因返回给httpserver
+
+配置文件：
+    setting.py
+    0 指定addr和port
+    1 指定webFrame的路径MODULE_PATH
+    2 指定具体使用的MODULE（WebFrame）
+    3 指定使用MODULE模块中的应用入口、
+    
+    
+文件call.py和re_test.py为练习测试文件，与本项目无关
